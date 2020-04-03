@@ -19,7 +19,6 @@ export class ProfileComponent implements OnInit {
     public _usuarioService: UsuarioService
     ) {
       this.usuario = this._usuarioService.usuario;
-      console.log( 'Constructor', this.usuario );
     }
 
   ngOnInit() {}
@@ -28,7 +27,7 @@ export class ProfileComponent implements OnInit {
 
     this.usuario.nombre = usuario.nombre;
 
-    if( !this.usuario.google ){
+    if ( !this.usuario.google ) {
       this.usuario.email = usuario.email;
     }
 

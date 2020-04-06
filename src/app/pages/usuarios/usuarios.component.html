@@ -10,17 +10,7 @@
     </div>
 </div>
 
-<div class="row animated fadeIn" *ngIf="cargando">
-    <div class="col-sm-12">
-        <div class="alert alert-info text-center">
-            <strong>Cargando</strong>
-            <br>
-            <i class="fa fa-refresh fa-spin fa-2x"></i>
-            <br>
-            <span>Espere por favor</span>
-        </div>
-    </div>
-</div>
+<app-loading *ngIf="cargando"></app-loading>
 
 <div class="row animated fadeIn" *ngIf="!cargando">
     <div class="col-12">

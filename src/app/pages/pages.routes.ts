@@ -12,9 +12,12 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { LoginGuardGuard } from '../services/service.index';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 
 const pagesRoutes: Routes = [
-    { 
+    {
         path: '',
         component: PagesComponent,
         canActivate: [ LoginGuardGuard ],
@@ -28,9 +31,12 @@ const pagesRoutes: Routes = [
             { path: 'profile', component: ProfileComponent, data : { titulo: 'Perfil de usuario' }},
             // Manteniemientos
             { path: 'usuarios', component: UsuariosComponent, data : { titulo: 'Mantenimineto de usuarios' }},
+            { path: 'hospitales', component: HospitalesComponent, data : { titulo: 'Mantenimineto de hospitales' }},
+            { path: 'medicos', component: MedicosComponent, data : { titulo: 'Mantenimineto de Médicos' }},
+            { path: 'medico/:id', component: MedicoComponent, data : { titulo: 'Actualizar Médico' }},
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
         ]
     }
-]
+];
 
 export const PAGES_ROUTES = RouterModule.forChild( pagesRoutes )

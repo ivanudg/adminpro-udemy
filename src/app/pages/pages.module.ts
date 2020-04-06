@@ -28,6 +28,10 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { LoadingComponent } from '../components/loading/loading.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 
 
 
@@ -44,13 +48,18 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
         RxjsComponent,
         ProfileComponent,
         UsuariosComponent,
-        ModalUploadComponent
+        ModalUploadComponent,
+        HospitalesComponent,
+        LoadingComponent,
+        MedicosComponent,
+        MedicoComponent,
     ],
     // Todas las que estén dentro de Export podrán ser accesadas desde fuera de este módulo
     exports: [
         DashboardComponent,
         ProgressComponent,
         Graficas1Component,
+        LoadingComponent
     ],
     imports: [
         CommonModule,

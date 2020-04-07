@@ -19,12 +19,30 @@ export class UsuarioService {
   token: string;
   menu: any[] =  [];
 
-  constructor( 
+  constructor(
     public http: HttpClient,
     public router: Router,
     public _subirArchivoService: SubirArchivoService
   ) {
     this.cargarStorage();
+  }
+
+  renuevaToken() {
+    const url = `${ URL_SERVICIOS }/login/renuevaToken?token=${ this.token }`;
+    return this.http.get( url )
+    .pipe(
+      map( (resp: any) => {
+        this.token = resp.token;
+        this.guardarStorage( this.usuario._id, this.token, this.usuario, this.menu );
+        console.log('Token Renovado');
+        return true;
+      }),
+      catchError( err => {
+        this.router.navigate(['/login']);
+        swal( 'No se pudo renovar Token', 'No fue posible renovar Token', 'err' );
+        return throwError ( err );
+      })
+    );
   }
 
   estaLogueado() {

@@ -32,6 +32,7 @@ import { HospitalesComponent } from './hospitales/hospitales.component';
 import { LoadingComponent } from '../components/loading/loading.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 
@@ -53,6 +54,7 @@ import { MedicoComponent } from './medicos/medico.component';
         LoadingComponent,
         MedicosComponent,
         MedicoComponent,
+        BusquedaComponent,
     ],
     // Todas las que estén dentro de Export podrán ser accesadas desde fuera de este módulo
     exports: [
